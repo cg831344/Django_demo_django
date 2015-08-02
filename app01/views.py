@@ -19,5 +19,12 @@ def List(request,view,id):
         result = '<br/>'.join(data)    
         return HttpResponse('<h1>'+result+'</h1>')
    
-        
+from app01.models import *
+
+def Model(request):
+    model = ColorDic.objects.values('ColorName')
+
+    print model
+
+    return HttpResponse(model)
 
